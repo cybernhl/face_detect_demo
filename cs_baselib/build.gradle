@@ -1,0 +1,120 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion versions.compileSdk
+    buildToolsVersion versions.buildToolsVersion
+    defaultConfig {
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            multiDexKeepProguard file('multidex-config.pro')
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            multiDexKeepProguard file('multidex-config.pro')
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        freeCompilerArgs = ['-Xjvm-default=enable']
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+    }
+
+    dexOptions {
+        preDexLibraries true
+        maxProcessCount 8
+    }
+
+
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+
+    //noinspection GradleDependency
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    //AndroidX
+    api deps.android.appcompat
+    api deps.android.constraint_layout
+    api deps.android.recyclerview
+    api deps.android.design
+    api deps.android.multidex
+    api deps.android.fragment_ktx  //Fragment与Activity的ViewModel扩展（Hilt必须）
+
+
+    //Kotlin相关
+    api deps.android.kt_ktx
+    api deps.android.ktx_coroutines_core
+    api deps.android.ktx_coroutines_android
+    api deps.android.lifecycle
+    api deps.android.lifecycle_vm
+    api deps.android.lifecycle_live
+    api deps.android.lifecycle_scope
+
+    //测试
+    testImplementation deps.android.junit
+    androidTestImplementation deps.android.test_junit
+    androidTestImplementation deps.android.test_espresso
+
+    //图片
+    implementation deps.support.glide
+    implementation deps.support.glide_annotation
+    implementation deps.support.glide_integration
+    kapt deps.support.glide_compiler
+
+    //网络相关
+    api deps.support.retrofit2
+    api deps.support.retrofit_gson
+    api deps.support.cookie_jar
+
+    //其他依赖
+    implementation deps.support.permission
+    api deps.support.live_bus
+    api deps.support.brvah
+
+    //刷新布局
+    api deps.support.smart_refresh_core
+    api deps.support.smart_refresh_head
+
+    //XPopup弹窗
+    api deps.support.easy_adapter
+    api(deps.support.xpopup) {
+        exclude group: 'androidx.recyclerview'
+        exclude group: 'androidx.appcompat'
+        exclude group: 'com.google.android.material'
+    }
+
+    //图片选择：带luban，ucorp
+    api(deps.support.picture_selector) {
+        exclude group: 'androidx.recyclerview'
+        exclude group: 'androidx.appcompat'
+        exclude group: 'com.squareup.okio'
+    }
+
+}

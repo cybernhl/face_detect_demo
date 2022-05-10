@@ -1,0 +1,95 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+//apply plugin: 'com.didiglobal.booster'
+
+android {
+    compileSdkVersion versions.compileSdk
+    buildToolsVersion versions.buildToolsVersion
+    defaultConfig {
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+
+        versionCode 100
+        versionName "1.0.0"
+        applicationId "com.hongyegroup.homecleaning"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            abiFilters "armeabi-v7a"
+        }
+
+        kotlinOptions {
+            jvmTarget = JavaVersion.VERSION_1_8
+        }
+
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    buildTypes {
+        release {
+            //默认系统混淆
+            minifyEnabled true
+            // 不显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            //是否可调试
+            debuggable false
+            //Zipalign优化
+            zipAlignEnabled true
+            //移除无用的resource文件
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            multiDexKeepProguard file('multidex-config.pro')
+        }
+
+        debug {
+            debuggable true
+            multiDexKeepProguard file('multidex-config.pro')
+        }
+
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+    }
+
+    dexOptions {
+        preDexLibraries true
+        maxProcessCount 8
+    }
+
+}
+
+dependencies {
+    //每个模块都要实现的依赖
+    //Test
+    testImplementation deps.android.junit
+    androidTestImplementation deps.android.test_junit
+    androidTestImplementation deps.android.test_espresso
+
+    //依赖服务层
+    api project(':cs_cptServices')
+
+    //硬件控制
+    implementation files('lib/aziotlibrary.aar') // 添加 aziot
+    implementation 'com.alibaba:fastjson:1.1.72.android' // 添加 fastjson
+
+    //Face SDK
+    implementation files('lib/arcsoft_face.jar')
+    implementation files('lib/arcsoft_image_util.jar')
+
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.6'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+
+    //依赖远端的工具类
+//    implementation 'com.gitee.newki123456:face_temperature_demo:0.0.3'
+    implementation 'com.gitee.newki123456:serial_port_tools:1.0.1'
+}

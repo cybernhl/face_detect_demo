@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/d_20dp"
+            android:gravity="center"
+            android:onClick="gotoHome"
+            android:text="填充登录信息，点击进入首页"
+            android:textColor="@color/black" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/d_20dp"
+            android:gravity="center"
+            android:onClick="openLight"
+            android:text="打开白色补光灯"
+            android:textColor="@color/black" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/d_20dp"
+            android:gravity="center"
+            android:onClick="openRedLight"
+            android:text="打开红色补光灯"
+            android:textColor="@color/black" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/d_20dp"
+            android:gravity="center"
+            android:onClick="openGreenLight"
+            android:text="打开绿色补光灯"
+            android:textColor="@color/black" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/d_20dp"
+            android:gravity="center"
+            android:onClick="closeLight"
+            android:text="关闭补光灯"
+            android:textColor="@color/black" />
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/d_20dp"
+            android:gravity="center"
+            android:onClick="closeBackLight"
+            android:text="关闭背光10秒后再打开背光"
+            android:textColor="@color/black" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/d_20dp"
+            android:gravity="center"
+            android:onClick="getTemplete"
+            android:text="红外温度获取"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/textTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/d_20dp"
+            android:gravity="center"
+            android:onClick="registLocal"
+            android:text="本地人员注册"
+            android:textColor="@color/black" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/d_20dp"
+            android:gravity="center"
+            android:onClick="clearRegist"
+            android:text="清除注册人员"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+
+
+</ScrollView>

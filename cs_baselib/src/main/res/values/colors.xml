@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#4BC17D</color>
+    <color name="colorPrimaryDark">#4BC17D</color>
+    <color name="colorAccent">#4BC17D</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="white">#fff</color>
+    <color name="black">#000</color>
+    <color name="page_background_pressed">#33000000</color>
+    <color name="divider_color">#F4F4F4</color>
+    <color name="gray">#ccc</color>
+
+    <color name="shimmer_background_color">#dedede</color>
+
+</resources>

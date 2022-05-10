@@ -1,0 +1,69 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply from: "dependent.gradle"
+
+buildscript {
+    ext.kotlin_version = '1.4.21'
+    ext.booster_version = '2.4.0'
+
+    repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'https://jitpack.io' }
+        google()
+        jcenter()
+
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.0.1'
+
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        // ==================== Booster优化插件 ====================
+        // 基础框架
+        classpath "com.didiglobal.booster:booster-gradle-plugin:$booster_version"
+
+        // 多线程优化
+        classpath "com.didiglobal.booster:booster-transform-thread:$booster_version"
+        // WebView 预加载
+        classpath "com.didiglobal.booster:booster-transform-webview:$booster_version"
+        // SharedPreferences 优化
+        classpath "com.didiglobal.booster:booster-transform-shared-preferences:$booster_version"
+
+        // 资源压缩
+        classpath "com.didiglobal.booster:booster-task-compression-cwebp:$booster_version"
+        // 文件压缩
+        classpath "com.didiglobal.booster:booster-task-compression-processed-res:$booster_version"
+        // 去冗余资源
+        classpath "com.didiglobal.booster:booster-task-resource-deredundancy:$booster_version"
+        // 资源索引内联
+        classpath "com.didiglobal.booster:booster-transform-r-inline:$booster_version"
+
+        // 修复 finalizer 导致的 TimeoutException
+        classpath "com.didiglobal.booster:booster-transform-finalizer-watchdog-daemon:$booster_version"
+        // 检查覆盖安装导致的 Resources 和 Assets 未加载的 Bug
+        classpath "com.didiglobal.booster:booster-transform-res-check:$booster_version"
+        // 修复 Toast 在 Android 7.1 上的 Bug
+        classpath "com.didiglobal.booster:booster-transform-toast:$booster_version"
+        // 处理系统 Crash
+        classpath "com.didiglobal.booster:booster-transform-activity-thread:$booster_version"
+    }
+
+}
+
+allprojects {
+    repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
+        maven { url 'http://maven.aliyun.com/nexus/content/repositories/google' }
+        maven { url 'http://maven.aliyun.com/nexus/content/repositories/gradle-plugin' }
+        maven { url 'https://jitpack.io' }
+        google()
+        maven { url 'https://dl.bintray.com/umsdk/release' }
+        maven { url "https://androidx.dev/snapshots/builds/6543454/artifacts/repository/" }
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

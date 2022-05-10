@@ -1,0 +1,125 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowAnimationStyle">@style/My_AnimationActivity</item>
+        <item name="android:windowBackground">@null</item>
+    </style>
+
+    <style name="AppThemeLight" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowAnimationStyle">@style/My_AnimationActivity</item>
+    </style>
+
+
+    <style name="AppThemeLightDialog" parent="Theme.AppCompat.Light.Dialog">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+    <!--仿IOS对话框-->
+    <style name="widget_material_dialog_btn_style" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:textSize">16sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+
+    <style name="CenterDialog" parent="@android:style/Theme.Dialog">
+        <!-- 背景透明,设置圆角对话框必须设置背景透明，否则四角会有背景色小块-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 没有标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 背景模糊 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="windowActionBar">false</item>
+
+        <item name="android:windowAnimationStyle">@style/loading_dialog_anim</item>
+
+    </style>
+
+    <!--全程的Activity跳转动画 统一管理-->
+    <style name="My_AnimationActivity" mce_bogus="1" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/open_enter</item>
+        <item name="android:activityOpenExitAnimation">@anim/open_exit</item>
+        <item name="android:activityCloseEnterAnimation">@anim/close_enter</item>
+        <item name="android:activityCloseExitAnimation">@anim/close_exit</item>
+    </style>
+
+
+    <!--上下进出场的activity动画-->
+    <style name="up_down_activity_anim" mce_bogus="1" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/open_up</item>
+        <item name="android:activityCloseExitAnimation">@anim/close_down</item>
+    </style>
+
+
+    <!--LoadingDialog和LoadingPopuWindow的样式-->
+    <style name="Theme_LoadingDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowAnimationStyle">@style/loading_dialog_anim</item>
+    </style>
+    <!--LoadingDialog和LoadingPopuWindow的进出场动画-->
+    <style name="loading_dialog_anim" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/dialog_in_center</item>
+        <item name="android:windowExitAnimation">@anim/dialog_out_center</item>
+    </style>
+
+
+    <!--选择相机相册的对话框-->
+    <!--自定义对话框样式,选择相机相册，底部上来，底部下去，动画-->
+    <style name="quick_option_dialog" parent="@style/dialog_common">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@style/dialog_animation</item>
+    </style>
+
+    <style name="dialog_bottom" parent="@style/dialog_common">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@style/dialog_animation</item>
+    </style>
+
+    <style name="dialog_common" parent="android:Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <!--是否有灰色的背景雾糟-->
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="dialog_animation" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/dialog_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_out</item>
+    </style>
+
+
+    <!--location_filter_dialog,和LoadingDialog差不多，只是改了背景-->
+    <style name="Theme_normal_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <!--是否有灰色的背景雾糟-->
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowAnimationStyle">@style/location_filter_dialog_anim</item>
+    </style>
+    <!--location_filter_dialog只有进场动画-->
+    <style name="location_filter_dialog_anim" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/dialog_in_center</item>
+    </style>
+
+
+</resources>

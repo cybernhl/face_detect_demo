@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--CircleImageView-->
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <!-- {@deprecated Use civ_circlebackground_color instead.} -->
+        <attr name="civ_fill_color" format="color" />
+        <attr name="civ_circle_background_color" format="color" />
+    </declare-styleable>
+
+
+    <!--TitleBar-->
+    <declare-styleable name="EasyTitleBar">
+        <!--标题栏高度-->
+        <attr name="Easy_titleBarHeight" format="dimension" />
+        <!--标题栏背景颜色-->
+        <attr name="Easy_titleBarBackground" format="color" />
+        <!--填充状态栏的颜色-->
+        <attr name="Easy_fitColor" format="color|reference" />
+
+        <!--返回箭头、左右viewgroup距两边的距离-->
+        <attr name="Easy_parentPadding" format="dimension" />
+        <!--左右添加的view之间的距离-->
+        <attr name="Easy_viewPadding" format="dimension" />
+
+        <!--标题文字-->
+        <attr name="Easy_title" format="string" />
+        <!--标题大小-->
+        <attr name="Easy_titleSize" format="dimension" />
+        <!--标题颜色-->
+        <attr name="Easy_titleColor" format="color" />
+        <!--标题位置-->
+        <attr name="Easy_titleStyle">
+            <flag name="center" value="0" />
+            <flag name="left" value="1" />
+        </attr>
+
+        <!--标题栏分割线的有无-->
+        <attr name="Easy_lineState">
+            <flag name="gone" value="0" />
+            <flag name="visiable" value="1" />
+        </attr>
+
+        <!--标题栏分割线高度-->
+        <attr name="Easy_lineHeight" format="dimension" />
+        <!--标题栏分割线颜色-->
+        <attr name="Easy_lineColor" format="color" />
+
+        <!--左边第一个返回箭头的有无-->
+        <attr name="Easy_backLayoutState">
+            <flag name="visiable" value="1" />
+            <flag name="gone" value="0" />
+        </attr>
+        <!--左边箭头icon-->
+        <attr name="Easy_backRes" format="reference" />
+        <!--左边图标-->
+        <attr name="Easy_leftOneImage" format="reference" />
+        <!--左边文字-->
+        <attr name="Easy_leftOneText" format="string" />
+        <!--左边图标-->
+        <attr name="Easy_leftTwoImage" format="reference" />
+        <!--左边文字-->
+        <attr name="Easy_leftTwoText" format="string" />
+        <!--左边图标-->
+        <attr name="Easy_leftThreeImage" format="reference" />
+        <!--左边文字-->
+        <attr name="Easy_leftThreeText" format="string" />
+        <!--左边ViewGroup的有无-->
+        <attr name="Easy_leftLayoutState">
+            <flag name="gone" value="0" />
+            <flag name="visiable" value="1" />
+        </attr>
+
+        <!--右边图标-->
+        <attr name="Easy_rightOneImage" format="reference" />
+        <!--右边文字-->
+        <attr name="Easy_rightOneText" format="string" />
+        <!--右边图标-->
+        <attr name="Easy_rightTwoImage" format="reference" />
+        <!--右边文字-->
+        <attr name="Easy_rightTwoText" format="string" />
+
+        <!--右边图标-->
+        <attr name="Easy_rightThreeImage" format="reference" />
+        <!--右边文字-->
+        <attr name="Easy_rightThreeText" format="string" />
+        <!--右边viewGroup的有无-->
+        <attr name="Easy_rightLayoutState">
+            <flag name="gone" value="0" />
+            <flag name="visiable" value="1" />
+        </attr>
+
+        <!--设置是否充满状态栏,一般不用-->
+        <attr name="Easy_fitsSystemWindows" format="boolean" />
+        <!--设置是否充满状态栏并带有状态栏的上边距，常用-->
+        <attr name="Easy_hasStatusPadding" format="boolean" />
+
+        <!--菜单图标大小-->
+        <attr name="Easy_menuImgSize" format="dimension" />
+        <!--菜单文字大小-->
+        <attr name="Easy_menuTextSize" format="dimension" />
+        <!--菜单文字颜色-->
+        <attr name="Easy_menuTextColor" format="color" />
+
+    </declare-styleable>
+
+
+    <!--  Shimmer闪光  -->
+    <declare-styleable name="ShimmerLayout">
+        <attr name="shimmer_color" format="color|reference"/>
+        <attr name="shimmer_animation_duration" format="integer|reference"/>
+        <attr name="shimmer_auto_start" format="boolean|reference"/>
+        <attr name="shimmer_angle" format="integer|reference"/>
+        <attr name="shimmer_mask_width" format="float|reference"/>
+        <attr name="shimmer_gradient_center_color_width" format="float|reference"/>
+        <attr name="shimmer_reverse_animation" format="boolean|reference"/>
+    </declare-styleable>
+
+    <!--  原形的Loading-Anim  -->
+    <declare-styleable name="CircleLoadingView">
+        <attr name="loading_renderer">
+
+            <!--circle rotate-->
+            <enum name="MaterialLoadingRenderer" value="0" />
+            <enum name="LevelLoadingRenderer" value="1" />
+            <enum name="WhorlLoadingRenderer" value="2" />
+            <enum name="GearLoadingRenderer" value="3" />
+
+        </attr>
+    </declare-styleable>
+
+
+    <declare-styleable name="JumpLoadingView">
+        <attr name="delay" format="integer|reference" />
+    </declare-styleable>
+
+</resources>

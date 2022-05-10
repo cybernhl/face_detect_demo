@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <com.guadou.lib_baselib.view.progress.jump.ShapeLoadingView
+        android:id="@+id/shapeLoadingView"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="2dp" />
+
+    <ImageView
+        android:id="@+id/indication"
+        android:layout_width="23dp"
+        android:layout_height="3dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="56dp"
+        android:src="@drawable/shadow" />
+
+</merge>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="xstatusbar_fake_status_bar_view" type="id"/>
+    <item name="xstatusbar_translucent_view" type="id"/>
+    <item name="xloading_retry" type="id"/>
+</resources>

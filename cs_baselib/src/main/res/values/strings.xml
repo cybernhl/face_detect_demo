@@ -1,0 +1,27 @@
+<resources>
+    <string name="no">No</string>
+    <string name="Ok">Ok</string>
+    <string name="loading">Loading...</string>
+    <string name="uploading">UpLoading...</string>
+    <string name="error_data_parsing">Data parsing exception.</string>
+    <string name="error_network_connections">Network connection exception, please check the network.</string>
+    <string name="error_server_business">The server is on business. Please try again later.</string>
+    <string name="error_running">Error running, please try again.</string>
+    <string name="error_service_connection">No connection to the server, please try again.</string>
+    <string name="error_network_timeout">Network connection timeout.</string>
+    <string name="error_domain_name">Unable to access domain name, unknown domain name.</string>
+    <string name="error_unknown">unknown error.</string>
+    <!-- Error View -->
+    <string name="error_view_click_to_refresh">Click to Refresh</string>
+    <string name="error_view_no_data">you don\'t have any record yet</string>
+    <string name="error_view_loading">Loading…</string>
+    <string name="error_view_load_error_click_to_refresh">you don\'t have any record yet</string>
+    <string name="error_view_network_error_click_to_refresh">Network Error</string>
+    <string name="tip_network_error">Network connection error, please check the network connection</string>
+    <string name="network_alert">Network Alert</string>
+    <string name="is_goto_setting">Network connection error,Are you sure goto setting?</string>
+    <string name="setting">Setting</string>
+    <string name="cancel">Cancel</string>
+    <string name="load_more_finish">Load Success</string>
+    <string name="no_more_data">No More Data.</string>
+</resources>
